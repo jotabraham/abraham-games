@@ -1,1 +1,7 @@
-<p>corn-hole works!</p>
+<div class="cornhole-score-card">
+   <form #cornholeScore="ngForm" (ngSubmit)="submitCornholeScore(cornholeScore)">
+      <input class="cornhole-input" id="cornholeScore" name="cornholeScore" type="number" max="21" min="0"
+         placeholder="0" ngModel>
+      <button [disabled]="finalScoreSubmitted">Submit Score</button>
+   </form>
+</div>

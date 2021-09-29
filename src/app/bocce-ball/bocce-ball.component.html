@@ -1,1 +1,16 @@
-<p>bocce-ball works!</p>
+<div class="bocce-score">
+   <!-- <p class="current-score">{{ currentBocceScore }}</p> -->
+   <form #bocceScore="ngForm" (ngSubmit)="submitBocceScore(bocceScore)">
+      <input class="bocce-ball-input" id="bocceScore" name="bocceScore" type="number" max="16" min="0" placeholder="0"
+         ngModel>
+      <!-- <div class="add-subtract-btns">
+         <button type="button" class="add-one" (click)="addOne()" [disabled]="currentBocceScore === 16">+1</button>
+         <button type="button" class="subtract-one" (click)="subtractOne()"
+            [disabled]="currentBocceScore === 0">-1</button>
+      </div> -->
+      <!-- <div class="win-lose-btns">
+         <button class="win-btn" [disabled]="currentBocceScore !== 16">Win</button>
+      </div> -->
+      <button [disabled]="finalScoreSubmitted">Submit Score</button>
+   </form>
+</div>
