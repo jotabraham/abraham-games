@@ -42,8 +42,28 @@ export class GamesService {
   };
 
   onSubmitNumberOfMarbles(numberOfMarbles: number) {
-    console.log('service num of mars: ' + numberOfMarbles)
-    this.highScore += numberOfMarbles;
+    let finalMarblesScore: number = 0;
+    if (numberOfMarbles === 8) {
+      finalMarblesScore = 36;
+      this.totalWins += 1;
+    } else if (numberOfMarbles === 7) {
+      finalMarblesScore = 35;
+    } else if (numberOfMarbles === 6) {
+      finalMarblesScore = 33;
+    } else if (numberOfMarbles === 5) {
+      finalMarblesScore = 30;
+    } else if (numberOfMarbles === 4) {
+      finalMarblesScore = 26;
+    } else if (numberOfMarbles === 3) {
+      finalMarblesScore = 21;
+    } else if (numberOfMarbles === 2) {
+      finalMarblesScore = 15;
+    } else if (numberOfMarbles === 1) {
+      finalMarblesScore = 8;
+    } else if (numberOfMarbles === 0) {
+      finalMarblesScore = 0;
+    };
+    this.highScore += finalMarblesScore;
     console.log('high score: ' + this.highScore);
     console.log('total wins: ' + this.totalWins);
   };
