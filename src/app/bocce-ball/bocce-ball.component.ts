@@ -1,5 +1,5 @@
 import { ConstantPool } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { GamesService } from '../games.service';
 
@@ -9,10 +9,10 @@ import { GamesService } from '../games.service';
   styleUrls: ['./bocce-ball.component.css']
 })
 export class BocceBallComponent implements OnInit {
-  bocceFinalScore: number = 0;
   win: boolean = false;
   scoreZero = false;
   currentBocceScore: number = 0;
+  finalBocceScore: number = 0;
   finalScoreSubmitted: boolean = false;
 
   constructor(private gamesService: GamesService) { }
@@ -21,10 +21,9 @@ export class BocceBallComponent implements OnInit {
   }
 
   submitBocceScore = (form:NgForm) => {
-    this.bocceFinalScore = form.form.value;
-    // console.log(this.bocceFinalScore);
+    this.finalBocceScore = form.form.value.bocceScore;
     this.finalScoreSubmitted = !this.finalScoreSubmitted;
-    this.gamesService.onSubmitBocceScore(this.bocceFinalScore);
+    this.gamesService.onSubmitBocceScore(this.finalBocceScore);
   };
 
   // addOne() {

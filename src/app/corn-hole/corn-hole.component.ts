@@ -18,10 +18,7 @@ export class CornHoleComponent implements OnInit {
   }
 
   submitCornholeScore = (form:NgForm) => {
-    console.log('submit cornhole score called');
-    console.log(form.form.value.cornholeScore);
-    // this.bocceFinalScore = form.form.value.bocceScore;
-    // console.log(this.bocceFinalScore);
+    this.finalCornholeScore = form.form.value.cornholeScore;
     this.finalScoreSubmitted = !this.finalScoreSubmitted;
     this.gamesService.onSubmitCornholeScore(this.finalCornholeScore);
   };

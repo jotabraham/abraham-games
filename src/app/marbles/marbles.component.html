@@ -1,1 +1,7 @@
-<p>marbles works!</p>
+<div class="marbles-score">
+   <form #numberOfMarbles="ngForm" (ngSubmit)="submitNumberOfMarbles(numberOfMarbles)">
+      <input class="marbles-ball-input" id="numberOfMarbles" name="numberOfMarbles" type="number" max="8" min="0"
+         placeholder="0" ngModel>
+      <button [disabled]="finalScoreSubmitted">Submit Score</button>
+   </form>
+</div>

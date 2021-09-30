@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +10,9 @@ export class GamesService {
   constructor() { }
 
   // possibly rewrite an onSubmitFinalScore method that takes in an object instead of just a number
-
-  onSubmitFinalScore(finalScore: object) {
-    // if (finalScore === )
-  };
+  // onSubmitFinalScore(finalScore: object) {
+  //   console.log('service final score: ' + finalScore);
+  // };
 
   onSubmitBocceScore(finalBocceScore: number) {
     if (finalBocceScore === 16) {
@@ -29,6 +28,22 @@ export class GamesService {
       this.totalWins += 1;
     }
     this.highScore += finalCornholeScore;
+    console.log('high score: ' + this.highScore);
+    console.log('total wins: ' + this.totalWins);
+  };
+
+  onSubmitKanjamScore(finalKanjamScore: number) {
+    if (finalKanjamScore === 21) {
+      this.totalWins += 1;
+    }
+    this.highScore += finalKanjamScore;
+    console.log('high score: ' + this.highScore);
+    console.log('total wins: ' + this.totalWins);
+  };
+
+  onSubmitNumberOfMarbles(numberOfMarbles: number) {
+    console.log('service num of mars: ' + numberOfMarbles)
+    this.highScore += numberOfMarbles;
     console.log('high score: ' + this.highScore);
     console.log('total wins: ' + this.totalWins);
   };

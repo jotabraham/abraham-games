@@ -1,1 +1,7 @@
-<p>kanjam works!</p>
+<div class="kanjam-score-card">
+   <form #kanjamScore="ngForm" (ngSubmit)="submitKanjamScore(kanjamScore)">
+      <input class="kanjam-input" id="kanjamScore" name="kanjamScore" type="number" max="21" min="0" placeholder="0"
+         ngModel>
+      <button [disabled]="finalScoreSubmitted">Submit Score</button>
+   </form>
+</div>
